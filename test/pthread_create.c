@@ -18,13 +18,10 @@ main(void){
     ret = pthread_create(&tid, NULL, thrd_func, NULL);
 
     if (ret != 0){
-        printf("pthread_create error\n");
+        printf("pthread_create error, %s\n", strerror(ret));
         exit(1);
     }
 
-
     printf("In main 2: thread id = %lu, pid = %u\n", pthread_self(), getpid());
-    sleep(1);
-
-    return 0;
+    pthread_exit(NULL);
 }
