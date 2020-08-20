@@ -8,7 +8,7 @@ int
 main(void){
     char buff[256];
     int error;
-    lua_State *L = lua_open();
+    lua_State *L = luaL_newstate();
     luaL_openlibs(L);
     while(fgets(buff, sizeof(buff), stdin) != NULL){
         error = luaL_loadbuffer(L, buff, strlen(buff), "line") ||
