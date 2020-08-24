@@ -71,6 +71,8 @@ main(void){
     //从3号索引向栈顶一定一个位置
     lua_rotate(L, 3, 1);stackDump(L);
 
+    lua_remove(L, -3);stackDump(L);
+
 
     lua_close(L);
     return 0;
